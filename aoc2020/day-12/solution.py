@@ -26,19 +26,15 @@ def get_updated_location(action, value, east, north):
 
 def get_updated_direction(action, value, direction):
     if action == 'L':
-        if value == 90:
-            direction = compass[direction][0]
-        elif value == 270:
-            direction = compass[direction][1]
-        else:
-            direction = compass[direction][2]
-    elif action == 'R':
-        if value == 90:
-            direction = compass[direction][1]
-        elif value == 270:
-            direction = compass[direction][0]
-        else:
-            direction = compass[direction][2]
+        index_90, index_270 = 0, 1
+    else:
+        index_90, index_270 = 1, 0
+    if value == 90:
+        direction = compass[direction][index_90]
+    elif value == 270:
+        direction = compass[direction][index_270]
+    else:
+        direction = compass[direction][2]
     return direction
 
 
