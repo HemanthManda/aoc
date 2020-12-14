@@ -66,7 +66,6 @@ def part2():
 def __main():
     print(part1())
     print(part2())
-    pass
 
 
 if __name__ == '__main__':
